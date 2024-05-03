@@ -4,10 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>H3templates | {% block title %}{% endblock %}</title>
+        <script src="https://cdn.tailwindcss.com"></script>
         {% load static %}
-        <link rel="stylesheet" href="">
+        <script src="{% static 'tailwind_config.js' %}"></script>
+
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body class="bg-black text-white">
         <main>
             {% block content %}
             {% endblock %}

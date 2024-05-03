@@ -35,6 +35,16 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "fontawesomefree"
+version = "6.5.1"
+description = "Font Awesome Free"
+optional = false
+python-versions = "*"
+files = [
+    {file = "fontawesomefree-6.5.1-py3-none-any.whl", hash = "sha256:8dec4a2ee37bf8e53379ebbf0d38cefec4e06c7c9227f59af39dbb7b1632817b"},
+]
+
+[[package]]
 name = "ruff"
 version = "0.4.2"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -89,4 +99,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "635ab25546d611abb10d629dbd9850d4da0ef39e2b6474c3da2fe20d00824602"
+content-hash = "9b42a1bd5b40580ee370184e694bdd41996ab541d972abd22ec6583ec7332b19"
