@@ -1,0 +1,5 @@
+<ul>
+    {% for entry in entries_list %}
+        <li class="ml-4 mt-1 hover:underline"><a href="#{{ entry.name }}">{{ entry.name }}</a></li>
+    {% endfor %}
+</ul>

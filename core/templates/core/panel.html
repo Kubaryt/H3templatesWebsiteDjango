@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="h-screen w-screen flex flex-col">
+        <nav class="flex w-screen justify-between items-end h-[9%] pb-4 border-b-2 text-gray-300 bg-black">
+            <a href="https://github.com/Kubaryt/H3templatesWebsiteDjango" class="flex items-end h-[5svh] ml-4 gap-2">
+                <i class="fa-brands fa-github fa-3x"></i>
+                <span class="tablet:text-2xl mobileL:text-xl text-sm font-bold">Heroes III templates Website</span>
+            </a>
+            <ul class="flex tablet:gap-12 gap-4 mr-8">
+                <li class="hover:underline"><a href="{% url "core:index" %}">Home</a></li>
+                <li class="hover:underline"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+        <div class="flex h-[91%]">
+            <ul id="left-panel" class="h-full w-[20%] border-r-4 pr-4 ml-4 pt-8 border-gray-500 hidden tablet:block">
+                <p class="text-2xl font-bold mb-4">Table of contents</p>
+                {% block left_panel_links %}
+                {% endblock %}
+            </ul>
+            <div title="panel-content" class="grow">
+                {% block panel_content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{#    <script>#}
+{#        const leftPanel = document.getElementById("left-panel");#}
+{#        document.screen.addEventListener("resize", () => {#}
+{#            if (window.innerWidth >= "768px") {#}
+{#                leftPanel.classList.remove("hidden");#}
+{#            } else {#}
+{#                leftPanel.classList.add("hidden");#}
+{#            }#}
+{#        })#}
+{#    </script>#}
+{% endblock %}
