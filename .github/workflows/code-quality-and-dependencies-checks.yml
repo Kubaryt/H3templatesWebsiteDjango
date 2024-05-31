@@ -1,8 +1,8 @@
-name: Code quality checks
+name: Code quality and dependency checks
 on: push
 
 jobs:
-  ruff-lint:
+  code-quality-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,7 +13,7 @@ jobs:
         uses: chartboost/ruff-action@v1
         with:
           args: check
-  poetry-checks:
+  dependencies-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,4 +27,4 @@ jobs:
       - name: Check dependencies with poetry
         run:
           poetry update
-          poetry checks
+          poetry check
