@@ -5,8 +5,10 @@ from core.models import Template, TemplateRelease
 
 class OriginalTemplate(Template):
     main_author = models.CharField(max_length=255)
-    other_authors = models.JSONField()
-    number_of_releases = models.IntegerField()
+    other_authors = models.TextField()
+
+    def number_of_releases(self):
+        return OriginalTemplateRelease.objects.filter(template=self).count()
 
 
 class OriginalTemplateRelease(TemplateRelease):

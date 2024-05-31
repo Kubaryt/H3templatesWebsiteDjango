@@ -17,4 +17,4 @@ class TemplateRelease(models.Model):
     description = models.TextField()
     graph = models.ImageField()
     release_date = models.DateField()
-    is_recommend = models.BooleanField()
+    is_recommended = models.BooleanField()
