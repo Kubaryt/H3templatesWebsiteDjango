@@ -1,0 +1,12 @@
+{% extends "core/panel.html" %}
+
+{% block left_panel_links %}
+    {% load core_extras %}
+    <li class="mb-4 text-gray-300"><span class="text-1xl font-bold text-gray-500">{{ template.name }} {{ template_subtemplates }}:</span>
+        {% table_of_contents template_children %}
+    </li>
+{% endblock %}
+
+{% block panel_content %}
+
+{% endblock %}
