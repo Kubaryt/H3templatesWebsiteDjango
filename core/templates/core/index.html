@@ -15,6 +15,14 @@
 
 {% block panel_content %}
     <div class="flex flex-col items-center mt-8">
-        <h1 class="md:text-3xl text-2xl font-bold pb-4 border-b-4 border-gray-500 w-full text-center">Heroes of Might and Magic III: Horn of the Abyss random maps' template list</h1>
+        <h1 class="tablet:text-2xl text-xl font-bold pb-4 border-b-4 border-gray-500 w-full text-center">Heroes of Might and Magic III: Horn of the Abyss random maps' template list</h1>
+        <h2 class="text-lg tablet:text-xl font-bold pl-4 mt-4 w-full">Altenative versions of built-in HotA templates:</h2>
+        {% for template in builtin_templates %}
+            {% template_entry template %}
+        {% endfor %}
+        <h2 class="text-lg tablet:text-xl font-bold pl-4 mt-8 w-full">Original templates for HotA:</h2>
+        {% for template in original_templates %}
+            {% template_entry template %}
+        {% endfor %}
     </div>
 {% endblock %}
