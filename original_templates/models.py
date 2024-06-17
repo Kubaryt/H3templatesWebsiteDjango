@@ -1,10 +1,16 @@
 from django.db import models
 
-from core.models import Template, TemplateRelease
+from core.models import TemplateBase, TemplateReleaseBase
 
 
-class OriginalTemplate(Template):
+class OriginalTemplate(TemplateBase):
     main_author = models.CharField(max_length=255)
+
+    def get_recommended_template_release(self):
+        return OriginalTemplateRelease.objects.get(template=self, is_recommended=True)
+
+    def get_template_release(self):
+        return list(OriginalTemplateRelease.objects.filter(template=self))
 
     def number_of_releases(self):
         return OriginalTemplateRelease.objects.filter(template=self).count()
@@ -13,7 +19,7 @@ class OriginalTemplate(Template):
         return list(OriginalTemplateRelease.objects.filter(template=self).values_list('author', flat=True))
 
 
-class OriginalTemplateRelease(TemplateRelease):
+class OriginalTemplateRelease(TemplateReleaseBase):
     template = models.ForeignKey(OriginalTemplate, on_delete=models.CASCADE)
 
     def __str__(self):
