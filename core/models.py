@@ -8,6 +8,9 @@ class TemplateBase(models.Model):
     short_description = models.TextField()
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class TemplateReleaseBase(TemplateBase):
     author = models.CharField(max_length=255)

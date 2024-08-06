@@ -9,8 +9,8 @@ def table_of_contents(entries_list):
 
 
 @register.inclusion_tag("components/template_entry.html")
-def template_entry(template):
-    return {"template": template}
+def template_entry(template, template_type):
+    return {"template": template, "template_type": template_type}
 
 
 @register.inclusion_tag("components/../templates/core/template_page.html")

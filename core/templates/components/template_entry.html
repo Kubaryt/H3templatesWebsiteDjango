@@ -1,0 +1,15 @@
+<div id="{{ template.name }}" class="flex flex-col w-full pl-8 mt-2">
+    <h3 class="text-base tablet:text-lg font-bold text-gray-500">{{ template.name }}</h3>
+    <p class="text-gray-300 tablet:text-base text-sm mt-2">
+        {{ template.short_description }}
+    {% block template_details %}
+        {% if template.main_author %}
+        <br>Main author: {{ template.main_author }}
+        {% endif %}
+    {% endblock %}
+    <br>
+    <a href="{% block template_page_link %}{{ template_type }}/{{ template.name }}{% endblock %}" class="text-purple-500">
+        Go to template page!
+    </a>
+    </p>
+</div>

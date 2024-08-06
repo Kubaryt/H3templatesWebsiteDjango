@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="h-screen w-screen flex flex-col">
+    <div class="h-max w-screen flex flex-col">
         <nav class="flex w-screen justify-between items-center pb-4 pt-4 border-b-2 text-gray-300 bg-black h-[10%]">
             <a href="https://github.com/Kubaryt/H3templatesWebsiteDjango" class="flex ml-4 gap-2 items-end h-[48px]">
                 <i class="fa-brands fa-github fa-3x"></i>
@@ -14,8 +14,8 @@
                 <li class="hover:underline"><a href="#">Login</a></li>
             </ul>
         </nav>
-        <div class="flex h-full">
-            <ul id="left-panel" class="h-full w-[20%] border-r-4 pr-4 ml-4 pt-8 border-gray-500 hidden tablet:block">
+        <div class="flex h-auto">
+            <ul id="left-panel" class="w-[20%] border-r-4 pr-4 ml-4 pt-8 border-gray-500 hidden tablet:block">
                 <p class="text-2xl font-bold mb-4">Table of contents</p>
                 {% block left_panel_links %}
                 {% endblock %}

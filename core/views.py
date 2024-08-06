@@ -1,14 +1,12 @@
 from django.shortcuts import render
 
+from builtin_templates.models import BuiltInTemplate
+from original_templates.models import OriginalTemplate
+
 
 def index(request):
-    # This is a mock data for the templates
-    builtin_templates = [{"name": "6lm10a"}, {"name": "8xm12a"}, {"name": "h3dm1"}]
-    original_templates = [
-        {"name": "Conquest"},
-        {"name": "Kubaryt"},
-        {"name": "Sapphire"},
-    ]
+    builtin_templates = BuiltInTemplate.objects.all()
+    original_templates = OriginalTemplate.objects.all()
     return render(
         request,
         "core/index.html",
